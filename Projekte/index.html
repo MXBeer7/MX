@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Mit der Eingabe von ! erscheint ein DropDown dort wird der erste gewählt und man hat ein leeres HTML Gerüst-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,6 +18,25 @@
              width: 300px; /* Damit sagt, dass die Liste maximal 300 Pixel breit ist, wird auch von Material Design so empfohlen */
         }
     </style>  <!-- Mit dem <style> Zusatz gibt man, dass hier jetzt css Code geschrieben wird-->
+        <script> /* Hier wird jetzt die JavaScript Funktion eingefügt */
+            function addToDO(){ /*Dank dem todolist.innerHTML kann man zwischen dem `` jetzt HTML Code einfügen */
+                /* Habe jetzt ein + vor das = gesetzt und damit wird der nachfolgende HTML Code zur Liste gegeben, wenn der Button geklickt wird */
+                todolist.innerHTML += `
+                <li class="mdl-list__item"> <!-- Dieser Code stand vorher bei der Listen Klasse -->
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">label</i> <!-- Internet macht es da nicht so leicht, denn nicht ganz wie im Tutorial-->
+                ${todofield.value} <!-- Durch diesen Befehl, todofield der Name vom Input Feld, wird in die Liste nur der Wert eingetragen -->
+              </span>
+              <span class="mdl-list__item-secondary-action">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                  <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input" checked />
+                </label>
+              </span>
+            </li> <!-- li steht für list item-->
+                `; /* Ein JavaScript Befehl endet immer mit einem Semikolon; */
+                todofield.value = '';
+            }
+        </script>
 </head>
 <body>
     <!-- Always shows a header, even in smaller screens. -->
@@ -32,7 +51,7 @@
         <nav class="mdl-navigation mdl-layout--large-screen-only">
           <a class="mdl-navigation__link" href="">Link</a>
           <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="https://chat.openai.com/auth/login">Lrin</a>
           <a class="mdl-navigation__link" href="">Link</a>
         </nav>
       </div>
@@ -40,7 +59,7 @@
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">To-Do-Liste</span> <!-- Der Titel hier bezieht auf das kleine Aufklappmenü der Webseite-->
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="https://www.siampark.net/index.php/de/">Aquapark</a>
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
@@ -53,8 +72,8 @@
         <!-- Textfield with Floating Label -->
         <form onsubmit="addToDO(); return false">  <!-- Das wurde verändert und zwar zu onsubmit und dahinter steht die JavaScript Funktion, muss man selber definieren-->
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">To-Do-Ding adden</label>
+            <input class="mdl-textfield__input" type="text" id="todofield"> <!-- Dort wo jetzt todofield steht, satnd vorher sample3 darunter auch-->
+            <label class="mdl-textfield__label" for="todofield">To-Do-Ding adden</label>
           </div>
           <!-- Da man neben dem Textfeld auch noch einen Button benötigt, der den Text der To-Do-Liste hinzufügt, kommt wieder Material Design-->
           <!-- In der Zeile darunter gebe ich nun dem Button eine JavaScript Funktion und zwar sobald das Formular abgesendet wird -->
@@ -64,19 +83,9 @@
           <!-- Der Button wurde innerhalb von der form vom Textfeld eingefügt, da er auch ein Teil von dessen Formular ist
                Oder besser gesagt, das Formular gehört beiden-->
         </form>
-        <ul class="demo-list-control mdl-list"> <!-- Die Liste steht nicht im Formular, weil sie nicht vom Button submitted werden soll -->
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons  mdl-list__item-avatar">label</i> <!-- Internet macht es da nicht so leicht, denn nicht ganz wie im Tutorial-->
-                Ding Nummer eins
-              </span>
-              <span class="mdl-list__item-secondary-action">
-                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
-                  <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input" checked />
-                </label>
-              </span>
-            </li> <!-- li steht für list item-->
-           </ul> <!-- ul steht für unsorted list-->
+        <ul class="demo-list-control mdl-list" id="todolist"> <!-- Die Liste steht nicht im Formular, weil sie nicht vom Button submitted werden soll -->
+            <!-- Die id todolist wurde jetzt neu hinzugefügt-->
+        </ul> <!-- ul steht für unsorted list-->
     </main>
   </div>
   <!-- Der gesamte Code der sich im Body befindet wurde ebenfalls von der selben Webseite kopiert.

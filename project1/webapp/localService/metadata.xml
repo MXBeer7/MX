@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://S4.BE-X.AT:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4.BE-X.AT:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4.BE-X.AT:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4.BE-X.AT:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4.BE-X.AT:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4.BE-X.AT:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4.BE-X.AT:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4.BE-X.AT:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4.BE-X.AT:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGTD_CDS_TASKS_CDS" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZGTD_CDS_PROJECTSType" sap:label="Getting Things Done Tasks Projects" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="username"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="username" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="Benutzername"/>
+                <Property Name="id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 byte UUID in 16 bytes (raw format)"/>
+                <Property Name="title" Type="Edm.String" MaxLength="35" sap:display-format="UpperCase" sap:label="Title" sap:quickinfo="Getting Things Done Title"/>
+                <Property Name="details" Type="Edm.String" sap:display-format="UpperCase" sap:label="Comment" sap:quickinfo="Getting Things Done - Comment"/>
+                <Property Name="steps" Type="Edm.String" sap:display-format="UpperCase" sap:label="Comment" sap:quickinfo="Getting Things Done - Comment"/>
+                <Property Name="vision" Type="Edm.String" MaxLength="35" sap:display-format="UpperCase" sap:label="Title" sap:quickinfo="Getting Things Done Title"/>
+                <Property Name="purpose" Type="Edm.String" MaxLength="35" sap:display-format="UpperCase" sap:label="Title" sap:quickinfo="Getting Things Done Title"/>
+                <Property Name="principles" Type="Edm.String" sap:display-format="UpperCase" sap:label="Comment" sap:quickinfo="Getting Things Done - Comment"/>
+            </EntityType>
+            <EntityType Name="ZGTD_CDS_TASKSType" sap:label="Getting Things Done Tasks" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Username"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="Benutzername"/>
+                <Property Name="id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 byte UUID in 16 bytes (raw format)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="title" Type="Edm.String" MaxLength="35" sap:display-format="UpperCase" sap:label="Title" sap:quickinfo="Getting Things Done Title"/>
+                <Property Name="parent_id" Type="Edm.Int32" sap:label="TASKID" sap:quickinfo="Getting Things Done Task ID"/>
+                <Property Name="actionable" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="actionable" sap:quickinfo="Getting Things Done Actionable"/>
+                <Property Name="someday_maybe" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="some day / maybe" sap:quickinfo="Getting Things Done - Some day / maybe"/>
+                <Property Name="details" Type="Edm.String" sap:display-format="UpperCase" sap:label="Comment" sap:quickinfo="Getting Things Done - Comment"/>
+                <Property Name="project_id" Type="Edm.Guid" sap:label="UUID" sap:quickinfo="16 byte UUID in 16 bytes (raw format)"/>
+                <NavigationProperty Name="to_Project" Relationship="ZGTD_CDS_TASKS_CDS.assoc_85E054D6ACB585E6DDF89D05A9574B87" FromRole="FromRole_assoc_85E054D6ACB585E6DDF89D05A9574B87" ToRole="ToRole_assoc_85E054D6ACB585E6DDF89D05A9574B87"/>
+                <NavigationProperty Name="to_Taggings" Relationship="ZGTD_CDS_TASKS_CDS.assoc_64F14148966F5DA1D29A10FDD37FE7D4" FromRole="FromRole_assoc_64F14148966F5DA1D29A10FDD37FE7D4" ToRole="ToRole_assoc_64F14148966F5DA1D29A10FDD37FE7D4"/>
+            </EntityType>
+            <EntityType Name="ZGTD_TAGGINGSType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DUMMY"/>
+                    <PropertyRef Name="CONTEXT_ID"/>
+                    <PropertyRef Name="TASK_ID"/>
+                </Key>
+                <Property Name="DUMMY" Type="Edm.Guid" Nullable="false" sap:label="UUID"/>
+                <Property Name="CONTEXT_ID" Type="Edm.Guid" Nullable="false" sap:label="UUID"/>
+                <Property Name="TASK_ID" Type="Edm.Guid" Nullable="false" sap:label="UUID"/>
+            </EntityType>
+            <Association Name="assoc_64F14148966F5DA1D29A10FDD37FE7D4" sap:content-version="1">
+                <End Type="ZGTD_CDS_TASKS_CDS.ZGTD_CDS_TASKSType" Multiplicity="1" Role="FromRole_assoc_64F14148966F5DA1D29A10FDD37FE7D4"/>
+                <End Type="ZGTD_CDS_TASKS_CDS.ZGTD_TAGGINGSType" Multiplicity="*" Role="ToRole_assoc_64F14148966F5DA1D29A10FDD37FE7D4"/>
+            </Association>
+            <Association Name="assoc_85E054D6ACB585E6DDF89D05A9574B87" sap:content-version="1">
+                <End Type="ZGTD_CDS_TASKS_CDS.ZGTD_CDS_TASKSType" Multiplicity="1" Role="FromRole_assoc_85E054D6ACB585E6DDF89D05A9574B87"/>
+                <End Type="ZGTD_CDS_TASKS_CDS.ZGTD_CDS_PROJECTSType" Multiplicity="1" Role="ToRole_assoc_85E054D6ACB585E6DDF89D05A9574B87"/>
+            </Association>
+            <EntityContainer Name="ZGTD_CDS_TASKS_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZGTD_CDS_PROJECTS" EntityType="ZGTD_CDS_TASKS_CDS.ZGTD_CDS_PROJECTSType" sap:creatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZGTD_CDS_TASKS" EntityType="ZGTD_CDS_TASKS_CDS.ZGTD_CDS_TASKSType" sap:creatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZGTD_TAGGINGS" EntityType="ZGTD_CDS_TASKS_CDS.ZGTD_TAGGINGSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_64F14148966F5DA1D29A10FDD37FE7D4" Association="ZGTD_CDS_TASKS_CDS.assoc_64F14148966F5DA1D29A10FDD37FE7D4" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZGTD_CDS_TASKS" Role="FromRole_assoc_64F14148966F5DA1D29A10FDD37FE7D4"/>
+                    <End EntitySet="ZGTD_TAGGINGS" Role="ToRole_assoc_64F14148966F5DA1D29A10FDD37FE7D4"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_85E054D6ACB585E6DDF89D05A9574B87" Association="ZGTD_CDS_TASKS_CDS.assoc_85E054D6ACB585E6DDF89D05A9574B87" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZGTD_CDS_TASKS" Role="FromRole_assoc_85E054D6ACB585E6DDF89D05A9574B87"/>
+                    <End EntitySet="ZGTD_CDS_PROJECTS" Role="ToRole_assoc_85E054D6ACB585E6DDF89D05A9574B87"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="ZGTD_CDS_TASKS_CDS.ZGTD_CDS_TASKS_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZGTD_CDS_TASKS_CDS.ZGTD_CDS_TASKS_CDS_Entities/ZGTD_CDS_PROJECTS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="details"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="steps"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="principles"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>details</PropertyPath>
+                                <PropertyPath>steps</PropertyPath>
+                                <PropertyPath>principles</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZGTD_CDS_TASKS_CDS.ZGTD_CDS_TASKS_CDS_Entities/ZGTD_CDS_TASKS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="details"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>details</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://S4.BE-X.AT:443/sap/opu/odata/sap/ZGTD_CDS_TASKS_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://S4.BE-X.AT:443/sap/opu/odata/sap/ZGTD_CDS_TASKS_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

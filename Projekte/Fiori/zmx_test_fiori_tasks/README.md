@@ -7,12 +7,12 @@
 |**Generation Platform**<br>Visual Studio Code|
 |**Template Used**<br>List Report Page V2|
 |**Service Type**<br>OData Url|
-|**Service URL**<br>https://s4.be-x.at/sap/opu/odata/sap/ZMX_SB_UI_GTD_TASKS/?%24format=xml
+|**Service URL**<br>https://s4.be-x.at/sap/opu/odata/sap/ZMX_SB_UI_GTD_TASKS/?format=xml
 |**Module Name**<br>zmx_test_fiori_tasks|
 |**Application Title**<br>App Title|
 |**Namespace**<br>fiori.tasks.test.zmx|
 |**UI5 Theme**<br>sap_horizon|
-|**UI5 Version**<br>1.112.1|
+|**UI5 Version**<br>^1.84.1|
 |**Enable Code Assist Libraries**<br>False|
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|

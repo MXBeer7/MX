@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZMX_SB_UI_GTD_TASKS/?%24format=xml/",
+        "uri": "/sap/opu/odata/sap/ZMX_SB_UI_GTD_TASKS/?format=xml/",
         "type": "OData",
         "settings": {
           "annotations": [
@@ -63,7 +63,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.112.1",
+      "minUI5Version": "1.84.1",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},

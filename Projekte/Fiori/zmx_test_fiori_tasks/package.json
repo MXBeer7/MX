@@ -10,6 +10,7 @@
   ],
   "main": "webapp/index.html",
   "devDependencies": {
+
     "@sap-ux/ui5-middleware-fe-mockserver": "^2.1.79",
     "@sap/ux-specification": "^1.108.2",
     "@sap/ux-ui5-tooling": "^1.9.3",
@@ -23,6 +24,7 @@
   },
   "dependencies": {
     "ui5-middleware-simpleproxy": "^0.9.6"
+
   },
   "scripts": {
     "start": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#fioritaskstestzmxzmxtestfioritasks-tile\"",
